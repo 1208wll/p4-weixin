@@ -36,7 +36,6 @@
 }
 
 /* moments */
-
 .moments-item {
     display: flex;
     padding: 20px 10px;
@@ -127,7 +126,7 @@
     left: 3px;
     transform: translate(0, -50%);
 }
-
+/*回复区域*/
 .moments-item .reply-zone {
     background: #f3f3f3;
     margin-top: 5px;
@@ -151,6 +150,7 @@
     padding: 2px 8px 0;
     color: #188eee;
 }
+/*图标-蓝色点赞*/
 .moments-item .icon-like-blue {
     display: inline-block;
     vertical-align: -3px;
