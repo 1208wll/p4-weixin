@@ -1,4 +1,4 @@
-// 用户名称 - 修改为自己的名称
+// 用户名称 - 可修改为自己的名称
 var userName = '张学友';
 // 需要渲染的页面的数据
 var data = [{
@@ -176,7 +176,8 @@ function messageTpl(messageData) {
  * 页面渲染函数：render
  */
 function render() {
-  // 只渲染第一个消息（多图片信息）
+  // 目前只渲染第一个消息（多图片信息）
+  // TODO: 需要将 data 的数据全部展示
   var messageHtml = messageTpl(data[0]);
   $momentsList.html(messageHtml);
 }
@@ -185,7 +186,7 @@ function render() {
  * 页面绑定事件函数：bindEvent
  */
 function bindEvent() {
-  // TODO
+  // TODO: 需要完成页面交互功能
 }
 
 /**
