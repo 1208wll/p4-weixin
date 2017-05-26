@@ -4,7 +4,7 @@ var userName = '张学友';
 var data = [{
   user: {
     name: '刘德华',
-    avator: './img/avator-liudehua.png'
+    avatar: './img/avatar-liudehua.png'
   }, 
   content: {
     type: 0, // 多图片信息
@@ -26,7 +26,7 @@ var data = [{
 }, {
   user: {
     name: '周杰伦',
-    avator: './img/avator-zhoujielun.png'
+    avatar: './img/avatar-zhoujielun.png'
   },
   content: {
     type: 1, // 分享信息
@@ -45,7 +45,7 @@ var data = [{
 }, {
   user: {
     name: '周润发',
-    avator: './img/avator-zhourunfa.png'
+    avatar: './img/avatar-zhourunfa.png'
   },
   content: {
     type: 2, // 单图片信息
@@ -61,7 +61,7 @@ var data = [{
 }, {
   user: {
     name: '刘德华',
-    avator: './img/avator-liudehua.png'
+    avatar: './img/avatar-liudehua.png'
   },
   content: {
     type: 3, // 无图片信息
@@ -150,7 +150,7 @@ function messageTpl(messageData) {
   htmlText.push('<div class="moments-item" data-index="0">');
   // 消息用户头像
   htmlText.push('<a class="item-left" href="#">');
-  htmlText.push('<img src="' + user.avator + '" width="42" height="42" alt=""/>');
+  htmlText.push('<img src="' + user.avatar + '" width="42" height="42" alt=""/>');
   htmlText.push('</a>');
   // 消息右边内容
   htmlText.push('<div class="item-right">');
