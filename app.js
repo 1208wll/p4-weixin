@@ -1,4 +1,4 @@
-// 用户名称 - 可修改为自己的名称
+// 用户名称 - 修改为自己的名称
 var userName = '张学友';
 // 需要渲染的页面的数据
 var data = [{
@@ -140,7 +140,8 @@ function multiplePicTpl(pics) {
   return htmlText.join('');
 }
 /**
- * 循环：消息体 （目前只支持多图片消息，需要补充完成其余三种消息展示）
+ * 循环：消息体 
+ * 生成的html文本可参考 message.html文件
  * @param {Object} messageData 对象
  */ 
 function messageTpl(messageData) {
@@ -158,7 +159,7 @@ function messageTpl(messageData) {
   htmlText.push('<a href="#" class="item-name">' + user.name + '</a>');
   // 消息内容-文本信息
   htmlText.push('<p class="item-msg">' + content.text + '</p>');
-  // 消息内容-图片列表
+  // 消息内容-图片列表 （目前只支持多图片消息，需要补充完成其余三种消息展示）
   htmlText.push(multiplePicTpl(content.pics));
   // 消息时间和回复按钮
   htmlText.push('<div class="item-ft">');
@@ -176,8 +177,7 @@ function messageTpl(messageData) {
  * 页面渲染函数：render
  */
 function render() {
-  // 目前只渲染第一个消息（多图片信息）
-  // TODO: 需要将 data 的数据全部展示
+  // TODO: 目前只渲染了一个消息（多图片信息）,需要展示data数组中的所有消息数据。
   var messageHtml = messageTpl(data[0]);
   $momentsList.html(messageHtml);
 }
@@ -186,7 +186,7 @@ function render() {
  * 页面绑定事件函数：bindEvent
  */
 function bindEvent() {
-  // TODO: 需要完成页面交互功能
+  // TODO: 完成页面交互功能
 }
 
 /**
