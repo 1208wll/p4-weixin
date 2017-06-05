@@ -30,19 +30,19 @@
 #### 1.1、多图片消息 (消息 type 为0)
 
 
-![](http://coding.imweb.io/img/project/moments/message1.png)
+![](http://coding.imweb.io/img/project/moments/type1.png)
 
 #### 1.2、分享消息  (消息 type 为1)
 
-![](http://coding.imweb.io/img/project/moments/message2.png)
+![](http://coding.imweb.io/img/project/moments/type2.png)
 
 #### 1.3、单图片消息 (消息 type 为2)
 
-![](http://coding.imweb.io/img/project/moments/message3.png)
+![](http://coding.imweb.io/img/project/moments/type3.png)
 
 #### 1.4、无图片消息 (消息 type 为3)
 
-![](http://coding.imweb.io/img/project/moments/message4.png)
+![](http://coding.imweb.io/img/project/moments/type4.png)
 
 
 `注：基础代码已提供多图片消息的实现方法，需补充完成其余三种消息的展现所需的html、css和js。`
@@ -67,17 +67,17 @@ var data = [...];
 
 具体效果如下：
 
-![](http://coding.imweb.io/img/project/moments/moments-replypanel.gif)
+![](http://coding.imweb.io/img/project/moments/replypanel.gif)
 
 
 ### 4、实现点赞功能
 - 对于未点赞的信息，点击回复按钮，展现点赞的按钮
 
-![](http://coding.imweb.io/img/project/moments/like.png)
+![](http://coding.imweb.io/img/project/moments/icon-like.png)
 
 - 对于已点赞的信息，点击回复按钮，展现取消点赞的按钮
 
-![](http://coding.imweb.io/img/project/moments/unlike.png)
+![](http://coding.imweb.io/img/project/moments/icon-unlike.png)
 
 - 点击点赞按钮，完成点赞
 - 点击取消按钮，取消点赞
@@ -85,7 +85,7 @@ var data = [...];
 具体效果如下：
 
 
-![](http://coding.imweb.io/img/project/moments/moments-like.gif)
+![](http://coding.imweb.io/img/project/moments/like.gif)
 
 
 ### 5、实现增加评论功能
@@ -96,7 +96,7 @@ var data = [...];
 
 具体效果如下：
 
-![](http://coding.imweb.io/img/project/moments/moments-comment.gif)
+![](http://coding.imweb.io/img/project/moments/comment.gif)
 
 
 ### 6、点击图片放大功能
@@ -105,7 +105,7 @@ var data = [...];
 
 具体效果如下：
 
-![](http://coding.imweb.io/img/project/moments/moments-pic.gif)
+![](http://coding.imweb.io/img/project/moments/pic.gif)
 
 
 
