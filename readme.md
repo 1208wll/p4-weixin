@@ -29,19 +29,20 @@
 对于朋友圈页面，消息大致分成四种情况：
 #### 1.1、多图片消息 (消息 type 为0)
 
-![](./demo/message1.png)
+
+![](http://coding.imweb.io/img/project/moments/message1.png)
 
 #### 1.2、分享消息  (消息 type 为1)
 
-![](./demo/message2.png)
+![](http://coding.imweb.io/img/project/moments/message2.png)
 
 #### 1.3、单图片消息 (消息 type 为2)
 
-![](./demo/message3.png)
+![](http://coding.imweb.io/img/project/moments/message3.png)
 
 #### 1.4、无图片消息 (消息 type 为3)
 
-![](./demo/message4.png)
+![](http://coding.imweb.io/img/project/moments/message4.png)
 
 
 `注：基础代码已提供多图片消息的实现方法，需补充完成其余三种消息的展现所需的html、css和js。`
@@ -66,17 +67,17 @@ var data = [...];
 
 具体效果如下：
 
-![](./demo/moments-replypanel.gif)
+![](http://coding.imweb.io/img/project/moments/moments-replypanel.gif)
 
 
 ### 4、实现点赞功能
 - 对于未点赞的信息，点击回复按钮，展现点赞的按钮
 
-![](./demo/like.png)
+![](http://coding.imweb.io/img/project/moments/like.png)
 
 - 对于已点赞的信息，点击回复按钮，展现取消点赞的按钮
 
-![](./demo/unlike.png)
+![](http://coding.imweb.io/img/project/moments/unlike.png)
 
 - 点击点赞按钮，完成点赞
 - 点击取消按钮，取消点赞
@@ -84,7 +85,7 @@ var data = [...];
 具体效果如下：
 
 
-![](./demo/moments-like.gif)
+![](http://coding.imweb.io/img/project/moments/moments-like.gif)
 
 
 ### 5、实现增加评论功能
@@ -95,7 +96,7 @@ var data = [...];
 
 具体效果如下：
 
-![](./demo/moments-comment.gif)
+![](http://coding.imweb.io/img/project/moments/moments-comment.gif)
 
 
 ### 6、点击图片放大功能
@@ -104,7 +105,7 @@ var data = [...];
 
 具体效果如下：
 
-![](./demo/moments-pic.gif)
+![](http://coding.imweb.io/img/project/moments/moments-pic.gif)
 
 
 

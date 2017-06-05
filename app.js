@@ -1,56 +1,58 @@
 // 用户名称 - 修改为自己的名称
-var userName = '张学友';
+var userName = 'Lu仔酱';
 // 需要渲染的页面的数据
+// 朋友圈页面的数据
 var data = [{
   user: {
-    name: '刘德华',
-    avatar: './img/avatar-liudehua.png'
+    name: '阳和',
+    avatar: './img/avatar2.png'
   }, 
   content: {
-    type: 0, // 多图片信息
-    text: '感谢大家，新的一年继续努力！',
-    pics: ['./img/reward1.png', './img/reward2.png', './img/reward3.png', './img/reward4.png'], // 图片路径
-    timeString: '51分钟前',
+    type: 0, // 多图片消息
+    text: '华仔真棒，新的一年继续努力！',
+    pics: ['./img/reward1.png', './img/reward2.png', './img/reward3.png', './img/reward4.png'],
+    timeString: '3分钟前',
   }, 
   reply: {
-    hasLiked: false, // 是否已点赞
-    likes: ['梁朝伟', '周杰伦'],
+    hasLiked: false,
+    likes: ['Guo封面', '源小神'],
     comments: [{
-      author: '周润发',
-      text: '恭喜华仔！！！'
+      author: 'Guo封面',
+      text: '你也喜欢华仔哈！！！'
     },{
-      author: '曾志伟',
-      text: '什么时候请客啊'
+      author: '喵仔zsy',
+      text: '华仔实至名归哈'
     }]
   }
 }, {
   user: {
-    name: '周杰伦',
-    avatar: './img/avatar-zhoujielun.png'
+    name: '伟科大人',
+    avatar: './img/avatar3.png'
   },
   content: {
-    type: 1, // 分享信息
+    type: 1, // 分享消息
     text: '全面读书日',
+    pics: [],
     share: {
-      pic: 'http://coding.imweb.io/img/p3/transition-hover.jpg',
+      pic: '',
       text: '飘洋过海来看你'
     },
-    timeString: '51分钟前',
+    timeString: '50分钟前',
   },
   reply: {
     hasLiked: false,
-    likes: ['梁朝伟'],
+    likes: ['阳和'],
     comments: []
   }
 }, {
   user: {
-    name: '周润发',
-    avatar: './img/avatar-zhourunfa.png'
+    name: '深圳周润发',
+    avatar: './img/avatar4.png'
   },
   content: {
-    type: 2, // 单图片信息
+    type: 2, // 单图片消息
     text: '很好的色彩',
-    pic: 'http://coding.imweb.io/img/default/k-2.jpg',
+    pics: ['http://coding.imweb.io/img/default/k-2.jpg'],
     timeString: '一小时前',
   },
   reply: {
@@ -60,12 +62,13 @@ var data = [{
   }
 }, {
   user: {
-    name: '刘德华',
-    avatar: './img/avatar-liudehua.png'
+    name: '喵仔zsy',
+    avatar: './img/avatar5.png'
   },
   content: {
-    type: 3, // 无图片信息
-    text: '伤心太平洋',
+    type: 3, // 无图片消息
+    text: '以后咖啡豆不敢浪费了',
+    pics: [],
     timeString: '2个小时前',
   }, 
   reply: {
@@ -74,6 +77,7 @@ var data = [{
     comments: []
   }
 }];
+
 
 // 页面元素
 var $momentsList = $('.moments-list');
