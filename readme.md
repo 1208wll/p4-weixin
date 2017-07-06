@@ -84,6 +84,7 @@ var data = [messageObj1, messageObj2, ...];
     text: '华仔真棒，新的一年继续努力！',
     pics: ['./img/reward1.png', './img/reward2.png', './img/reward3.png', './img/reward4.png'],
     timeString: '3分钟前',
+    share: {}
   }, 
   reply: {
     hasLiked: false,
@@ -123,7 +124,17 @@ var data = [messageObj1, messageObj2, ...];
 |  type  |   Number |  消息的类型，共有四种值（0代表多图片消息、1代表单图片消息、2代表分享消息、3代表无图片消息）  |
 |  text  |   String |  消息的文本内容  |
 |  pics  |   Array |  消息相关图片地址列表  |
+|  share  |   Obejct |  分享消息内容对象  |
 |  timeString  |  String |  消息的发送时间字符串  |
+
+**content.share 分享数据对象组成说明**
+
+分享消息数据对象其组成如下：
+
+| 属性名      |  类型 |   备注  |
+| :-------- | :--------| :------ |
+|  pic  |   String | 分享消息的图片  |
+|  text  |   String |  分享消息的文本  |
 
 **reply 对象组成说明**
 
