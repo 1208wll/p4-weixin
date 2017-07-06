@@ -80,7 +80,6 @@ var data = [{
   }
 }];
 
-
 // 相关 DOM
 var $page = $('.page-moments');
 var $momentsList = $('.moments-list');
@@ -122,7 +121,6 @@ function commentsHtmlTpl(comments) {
   htmlText.push('</div>');
   return htmlText.join('');
 }
-
 /**
  * 评论点赞总体内容 HTML 模板
  * @param {Object} replyData 消息的评论点赞数据
@@ -136,7 +134,6 @@ function replyTpl(replyData) {
   htmlText.push('</div>');
   return htmlText.join('');
 }
-
 /**
  * 多张图片消息模版 （可参考message.html）
  * @param {Object} pics 多图片消息的图片列表
@@ -179,7 +176,12 @@ function messageTpl(messageData) {
     case 0:
       contentHtml = multiplePicTpl(content.pics);
       break;
-    // TODO: 增加其他三种消息
+    case 1:
+       // TODO: 实现单张图片消息
+    case 2:
+      //  TODO: 实现分享消息
+    case 3:
+      //  TODO: 实现无图片消息
   }
   htmlText.push(contentHtml);
   // 消息时间和回复按钮
@@ -194,6 +196,7 @@ function messageTpl(messageData) {
   return htmlText.join('');
 }
 
+
 /**
  * 页面渲染函数：render
  */
@@ -203,9 +206,9 @@ function render() {
   $momentsList.html(messageHtml);
 }
 
+
 /**
  * 页面绑定事件函数：bindEvent
- * 
  */
 function bindEvent() {
   // TODO: 完成页面交互功能事件绑定
