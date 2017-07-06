@@ -110,12 +110,14 @@ var data = [messageObj1, messageObj2, ...];
 |  reply  |   Object |  消息的评论点赞信息  |
 
 **user 对象组成说明**
+
 | 属性名      |  类型 |   备注  |
 | :-------- | :--------| :------ |
 |  name  |   String |  发送消息的用户的名称  |
 |  avatar  |   String |  发送消息的用户的头像地址  |
 
 **content 对象组成说明**
+
 | 属性名      |  类型 |   备注  |
 | :-------- | :--------| :------ |
 |  type  |   Number |  消息的类型，共有四种值（0代表多图片消息、1代表单图片消息、2代表分享消息、3代表无图片消息）  |
@@ -124,6 +126,7 @@ var data = [messageObj1, messageObj2, ...];
 |  timeString  |  String |  消息的发送时间字符串  |
 
 **reply 对象组成说明**
+
 | 属性名      |  类型 |   备注  |
 | :-------- | :--------| :------ |
 |  hasLiked  |   Boolean | 自己是否有对这条消息进行点赞  |
@@ -131,6 +134,7 @@ var data = [messageObj1, messageObj2, ...];
 |  comments  |   Array |  消息相关的评论信息列表  |
 
 **reply.comments 数组对象组成说明**
+
 comments 数组中每一项对象都代表着评论的信息，其组成如下
 | 属性名      |  类型 |   备注  |
 | :-------- | :--------| :------ |
