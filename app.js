@@ -1,17 +1,17 @@
-// 用户名称 - 修改为自己的名称
+// TODO: 用户名称需修改为自己的名称
 var userName = 'Lu仔酱';
-// 需要渲染的页面的数据
 // 朋友圈页面的数据
 var data = [{
   user: {
-    name: '阳和',
+    name: '阳和', 
     avatar: './img/avatar2.png'
   }, 
   content: {
     type: 0, // 多图片消息
     text: '华仔真棒，新的一年继续努力！',
     pics: ['./img/reward1.png', './img/reward2.png', './img/reward3.png', './img/reward4.png'],
-    timeString: '3分钟前',
+    share: {},
+    timeString: '3分钟前'
   }, 
   reply: {
     hasLiked: false,
@@ -34,10 +34,10 @@ var data = [{
     text: '全面读书日',
     pics: [],
     share: {
-      pic: '',
+      pic: 'http://coding.imweb.io/img/p3/transition-hover.jpg',
       text: '飘洋过海来看你'
     },
-    timeString: '50分钟前',
+    timeString: '50分钟前'
   },
   reply: {
     hasLiked: false,
@@ -53,7 +53,8 @@ var data = [{
     type: 2, // 单图片消息
     text: '很好的色彩',
     pics: ['http://coding.imweb.io/img/default/k-2.jpg'],
-    timeString: '一小时前',
+    share: {},
+    timeString: '一小时前'
   },
   reply: {
     hasLiked: false,
@@ -69,7 +70,8 @@ var data = [{
     type: 3, // 无图片消息
     text: '以后咖啡豆不敢浪费了',
     pics: [],
-    timeString: '2个小时前',
+    share: {},
+    timeString: '2个小时前'
   }, 
   reply: {
     hasLiked: false,
@@ -79,13 +81,15 @@ var data = [{
 }];
 
 
-// 页面元素
+// 相关 DOM
+var $page = $('.page-moments');
 var $momentsList = $('.moments-list');
 
 /**
- * 渲染函数：点赞列表
- * @param {Array} likes 点赞名称数组
- */ 
+ * 点赞内容 HTML 模板
+ * @param {Array} likes 点赞人列表
+ * @return {String} 返回html字符串
+ */
 function likesHtmlTpl(likes) {
   if (!likes.length) {
     return '';
@@ -102,9 +106,10 @@ function likesHtmlTpl(likes) {
   return htmlText.join('');
 }
 /**
- * 渲染函数：评论内容
- * @param {Array} comments 评论信息对象数组
- */ 
+ * 评论内容 HTML 模板
+ * @param {Array} likes 点赞人列表
+ * @return {String} 返回html字符串
+ */
 function commentsHtmlTpl(comments) {
   if (!comments.length) {
     return '';
@@ -117,22 +122,25 @@ function commentsHtmlTpl(comments) {
   htmlText.push('</div>');
   return htmlText.join('');
 }
+
 /**
- * 渲染函数：消息回复
- * @param {Array} comments 评论信息对象数组
- */ 
+ * 评论点赞总体内容 HTML 模板
+ * @param {Object} replyData 消息的评论点赞数据
+ * @return {String} 返回html字符串
+ */
 function replyTpl(replyData) {
   var htmlText = [];
   htmlText.push('<div class="reply-zone">');
-  // 点赞模板
   htmlText.push(likesHtmlTpl(replyData.likes));
-  // 评论模块
   htmlText.push(commentsHtmlTpl(replyData.comments));
   htmlText.push('</div>');
   return htmlText.join('');
 }
+
 /**
- * 渲染函数：多张图片
+ * 多张图片消息模版 （可参考message.html）
+ * @param {Object} pics 多图片消息的图片列表
+ * @return {String} 返回html字符串
  */
 function multiplePicTpl(pics) {
   var htmlText = [];
@@ -143,9 +151,9 @@ function multiplePicTpl(pics) {
   htmlText.push('</ul>');
   return htmlText.join('');
 }
+
 /**
  * 循环：消息体 
- * 生成的html文本可参考 message.html文件
  * @param {Object} messageData 对象
  */ 
 function messageTpl(messageData) {
@@ -163,8 +171,17 @@ function messageTpl(messageData) {
   htmlText.push('<a href="#" class="item-name">' + user.name + '</a>');
   // 消息内容-文本信息
   htmlText.push('<p class="item-msg">' + content.text + '</p>');
-  // 消息内容-图片列表 （目前只支持多图片消息，需要补充完成其余三种消息展示）
-  htmlText.push(multiplePicTpl(content.pics));
+  // 消息内容-图片列表 
+  var contentHtml = '';
+  // 目前只支持多图片消息，需要补充完成其余三种消息展示
+  switch(content.type) {
+    // 多图片消息
+    case 0:
+      contentHtml = multiplePicTpl(content.pics);
+      break;
+    // TODO: 增加其他三种消息
+  }
+  htmlText.push(contentHtml);
   // 消息时间和回复按钮
   htmlText.push('<div class="item-ft">');
   htmlText.push('<span class="item-time">' + content.timeString + '</span>');
@@ -173,7 +190,7 @@ function messageTpl(messageData) {
   htmlText.push('</div></div>');
   // 消息回复模块（点赞和评论）
   htmlText.push(replyTpl(messageData.reply));
-  htmlText.push('</div>');
+  htmlText.push('</div></div>');
   return htmlText.join('');
 }
 
@@ -188,9 +205,10 @@ function render() {
 
 /**
  * 页面绑定事件函数：bindEvent
+ * 
  */
 function bindEvent() {
-  // TODO: 完成页面交互功能
+  // TODO: 完成页面交互功能事件绑定
 }
 
 /**
@@ -199,8 +217,7 @@ function bindEvent() {
  * 2、绑定事件
  */
 function init() {
-  // 展现自己的名称
-  $('.user-name').text(userName);
+  // 渲染页面
   render();
   bindEvent();
 }
