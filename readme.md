@@ -135,7 +135,8 @@ var data = [messageObj1, messageObj2, ...];
 
 **reply.comments 数组对象组成说明**
 
-comments 数组中每一项对象都代表着评论的信息，其组成如下
+comments 数组中每一项对象都代表着评论的信息，其组成如下：
+
 | 属性名      |  类型 |   备注  |
 | :-------- | :--------| :------ |
 |  author  |   Boolean | 消息评论的用户名称  |
