@@ -177,9 +177,9 @@ function messageTpl(messageData) {
       contentHtml = multiplePicTpl(content.pics);
       break;
     case 1:
-      // TODO: 实现单张图片消息
-    case 2:
       // TODO: 实现分享消息
+    case 2:
+      // TODO: 实现单张图片消息
     case 3:
       // TODO: 实现无图片消息
   }
