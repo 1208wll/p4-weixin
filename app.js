@@ -172,16 +172,16 @@ function messageTpl(messageData) {
   var contentHtml = '';
   // 目前只支持多图片消息，需要补充完成其余三种消息展示
   switch(content.type) {
-    // 多图片消息
+      // 多图片消息
     case 0:
       contentHtml = multiplePicTpl(content.pics);
       break;
     case 1:
-       // TODO: 实现单张图片消息
+      // TODO: 实现单张图片消息
     case 2:
-      //  TODO: 实现分享消息
+      // TODO: 实现分享消息
     case 3:
-      //  TODO: 实现无图片消息
+      // TODO: 实现无图片消息
   }
   htmlText.push(contentHtml);
   // 消息时间和回复按钮
