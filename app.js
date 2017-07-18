@@ -94,13 +94,15 @@ function likesHtmlTpl(likes) {
     return '';
   }
   var  htmlText = ['<div class="reply-like"><i class="icon-like-blue"></i>'];
-  if (likes.length) {
-    htmlText.push(' <a class="reply-who" href="#">' + likes[0] + '</a>');
+  // 点赞人的html列表
+  var likesHtmlArr = [];
+  // 遍历生成
+  for(var i = 0, len = likes.length; i < len; i++) {
+    likesHtmlArr.push('<a class="reply-who" href="#">' + likes[i] + '</a>');
   }
-  // 后面的前面都有逗号
-  for(var i = 1, len = likes.length; i < len; i++) {
-    htmlText.push('，<a class="reply-who" href="#">' + likes[i] + '</a>');
-  }
+  // 每个点赞人以逗号加一个空格来相隔
+  var likesHtmlText = likesHtmlArr.join(', ');
+  htmlText.push(likesHtmlText);
   htmlText.push('</div>');
   return htmlText.join('');
 }
